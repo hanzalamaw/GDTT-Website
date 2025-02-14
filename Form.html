@@ -15,23 +15,17 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         message: document.getElementById("message").value
     };
 
-    fetch("https://script.google.com/macros/s/AKfycby6zmXqhz5QC0YnT4S5lq9Ny6TflVvwXDTS6SIZJge07-ehNbJyhAcMjPwW8TxnqLVlEg/exec", {
+    fetch("YOUR_NEW_GOOGLE_APPS_SCRIPT_URL", {
         method: "POST",
-        mode: "cors", // ✅ Enable cross-origin requests
+        mode: "no-cors",  // ✅ Prevent CORS issues
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert("Form submitted successfully!");
-        } else {
-            alert("Error: " + data.error);
-        }
-    })
+    .then(() => alert("Form submitted successfully!"))
     .catch(error => console.error("Error submitting form:", error));
 });
+
 
 </script>
