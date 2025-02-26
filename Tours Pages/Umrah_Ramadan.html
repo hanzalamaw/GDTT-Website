@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDTT | UMRAH</title>
+    <link rel="stylesheet" href="Umrah_Ramadan.css">
+</head>
+<body>
+    <nav id="navBar">
+        <img id="logo" src="../imgs/Logo_black.png" alt="Logo">
+    
+        <button id="menuToggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    
+        <ul id="navOptions">
+            <li><a href="../home.html" class="navItem">Home</a></li>
+            <li><a href="Tours Pages/Umrah_Ramadan.html.html" class="navItem active">Umrah</a></li>
+            <li><a href="Form.html" class="navItem">Contact Us</a></li>
+            <li><a href="About.html" class="navItem">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="tour-top">
+        <div class="head">
+            <h1>Umrah <span>(Ramadan)</span></h1>
+        </div>
+
+        <div class="images-grid">
+            <div class="left-image">
+                <img src="../imgs/umrah-grid-left.png" alt="Makkah">
+            </div>
+
+            <div class="right-image">
+                <img src="../imgs/umrah-grid-right1.png" alt="Medinah">
+                <img src="../imgs/umrah-grid-right2.png" alt="Clock Tower">
+            </div>
+        </div>
+    </section>
+
+    <div class="product-details">
+        <div class="all-details">
+            <div class="book">
+                <h1>BOOK YOUR PACKAGE</h1> <hr>
+            </div>
+        
+            <div class="package-name">
+                <div class="name-container">
+                    <div onclick="loading()" class="name-card" data-package-name="Umrah (Ramadan - 15 Days)">              
+                        <button class="package-option">15 Days</button>
+                    </div>
+        
+                    <div onclick="loading()" class="name-card" data-package-name="Umrah (Ramadan - 21 Days)">              
+                        <button class="package-option">21 Days</button>
+                    </div>
+                </div>
+            </div>    
+        
+            <div class="booking">
+                <div onclick="display()" class="packages">
+                    <button class="packageBtn">PACKAGES OPTIONS</button>
+                    <img id="down" src="../imgs/Chevron Down.png" alt="arrow-Down">
+                    <img id="up" src="../imgs/Chevron Up.png" alt="arrow-Up">
+                </div>
+                
+                <p id="load"></p>
+        
+                <div id="packageContainer">
+                    
+                </div>
+        
+                <form id="contactForm">
+                    <div class="info">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="number" id="contact" placeholder="Your Phone Number" required>
+                        <input type="email" id="email" placeholder="Your Email">
+                        <input type="number" id="persons" placeholder="No. of Persons" required min="1">
+                    </div>
+                    <button type="submit" id="submit">Reseve Your Seat</button>
+                </form>
+        
+                <p id="done">Your Seat has been Reserved! We will contact you soon for payment process</p>
+                <p id="fail">There was an error submitting the details. Please try Again!</p>
+            </div>
+        </div>
+
+        <div class="about-package">
+            <div class="about-section">
+                <h1>Package Details</h1>
+                <p>asjdlajsdhlkasdnasd kasnd lkasndlkasndn adsnd lasndn asdjbasl bdas dljsb ljasbdaldbl jsadljsa </p>
+            </div>
+
+            <div class="about-section">
+                <h1>Package Includes</h1>
+                <ul>
+                    <li><span>&#10003;</span></li>
+                    <li><span>&#10003;</span></li>
+                    <li><span>&#10003;</span></li>
+                    <li><span>&#10003;</span></li>
+                    <li><span>&#10003;</span></li>
+                    <li><span>&#10003;</span></li>
+                </ul>
+            </div>
+
+            <div id="departureDetails">
+                <div class="about-section">
+                    <h1>Departure: </h1>
+                    <p>*Please Select Days to Show the Departure Date*</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <a href="home.html"><img src="../imgs/Logo_black.png" alt="Logo" style="width: 170px;"></a>
+            <p class="footer-about">Travel, enjoy and live a new and full life.</p>
+          </div>
+          <div class="footer-section">
+            <h5>Get in Touch</h5>
+            <p>B-655, F.B.Area Block # 13, Gulberg, Karachi</p>
+            <p>+92 331 7258177</p>
+            <p>info@greendometravels.com</p>
+          </div>
+          <div class="footer-section">
+            <h5>Learn More</h5>
+            <ul>
+              <li><a href="About.html">About Us</a></li>
+              <li><a href="Contact.html">Contact Us</a></li>
+              <li><a href="Policy_Refund.html">Refund & Return Policy</a></li>
+              <li><a href="Policy_Terms.html">Terms of Service</a></li>
+              <li><a href="Policy_privacy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-section newsletter">
+            <h5>Newsletter</h5>
+            <p>Subscribe to our newsletter for updates.</p>
+            <form id="news">
+                <input id="news-email" type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form> 
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 GreenDome Travel & Tours. All rights reserved.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/GreenDomeTours"><img src="../imgs/facebook.png" alt="Facebook" style="width: 2rem; height: 2rem;"></a>
+            <a href="https://www.instagram.com/greendometravels/"><img src="../imgs/instagram.png" alt="Instagram" style="width: 2rem; height: 2rem;"></a>
+          </div>
+        </div>
+    </footer>
+
+
+    <script src="Umrah_Ramadan.js"></script>
+
+</body>
+</html>
