@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDTT | Privacy Policy</title>
+    <link rel="stylesheet" href="Policy_privacy.css">
+    <link rel="icon" type="image/png" href="imgs/favicon.png">
+</head>
+<body>
+    <nav id="navBar">
+        <img id="logo" src="imgs/Logo_black.png" alt="Logo" onclick="window.location.href='index.html';" style="cursor: pointer;">
+    
+        <button id="menuToggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>   
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    
+        <ul id="navOptions">    
+            <li><a href="index.html" class="navItem">Home</a></li>
+            <li><a href="Umrah_Trips.html" class="navItem">Umrah</a></li>
+            <li><a href="Contact.html" class="navItem">Contact Us</a></li>
+            <li><a href="profile.pdf" class="navItem">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="policy">
+      <div class="head"> 
+        <h1>Privacy Policy</h1>
+      </div>
+
+      <div class="content">
+        <h3>1. Introduction</h3>
+        <p>At Greendome Travel & Tours, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you use our services.</p>
+        
+        <h3>2. Information We Collect</h3>
+        <p>We may collect the following types of information:</p>
+        <ul>
+            <li>Personal details (name, email, phone number, address)</li>
+            <li>Payment information (credit/debit card details, billing address)</li>
+            <li>Travel preferences and booking history</li>
+            <li>IP address and device information</li>
+            <li>Any other information you provide while using our services</li>
+        </ul>
+        
+        <h3>3. How We Use Your Information</h3>
+        <p>We use your information to:</p>
+        <ul>
+            <li>Process bookings and payments</li>
+            <li>Provide customer support</li>
+            <li>Send booking confirmations and updates</li>
+            <li>Improve our website and services</li>
+            <li>Comply with legal and regulatory requirements</li>
+        </ul>
+        
+        <h3>4. Information Sharing</h3>
+        <p>We do not sell or rent your personal information. However, we may share your information with:</p>
+        <ul>
+            <li>Third-party service providers (hotels, airlines, payment processors, etc.)</li>
+            <li>Law enforcement agencies if required by law</li>
+            <li>Business partners for promotional offers (with your consent)</li>
+        </ul>
+        
+        <h3>5. Data Security</h3>
+        <p>We implement security measures to protect your personal information from unauthorized access, loss, or misuse. However, no method of transmission over the internet is 100% secure.</p>
+        
+        <h3>6. Cookies and Tracking</h3>
+        <p>We use cookies and similar tracking technologies to enhance your browsing experience. You can control cookie preferences through your browser settings.</p>
+        
+        <h3>7. Your Rights</h3>
+        <p>You have the right to:</p>
+        <ul>
+            <li>Access, update, or delete your personal information</li>
+            <li>Opt-out of marketing communications</li>
+            <li>Request information about how your data is used</li>
+        </ul>
+        
+        <h3>8. Changes to this Privacy Policy</h3>
+        <p>We reserve the right to update this Privacy Policy at any time. Changes will be posted on this page with the updated effective date.</p>
+        
+        <h3>9. Contact Information</h3>
+        <p>If you have any questions or concerns about our Privacy Policy, please contact us at:</p>
+        <p><span>
+        - B-655, F.B.Area Block # 13, Gulberg, Karachi <br>
+        - +92 331 7259177 <br>
+        - greendometravels.com</span></p>
+        <p>By using our services, you acknowledge that you have read, understood, and agreed to this Privacy Policy.</p>
+      </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <a href="index.html"><img src="imgs/Logo_black.png" alt="Logo" style="width: 170px;"></a>
+            <p class="footer-about">Travel, enjoy and live a new and full life.</p>
+          </div>
+          <div class="footer-section">
+            <h5>Get in Touch</h5>
+            <p>B-655, F.B.Area Block # 13, Gulberg, Karachi</p>
+            <p>+92 331 7258177</p>
+            <p>info@greendometravels.com</p>
+          </div>
+          <div class="footer-section">
+            <h5>Learn More</h5>
+            <ul>
+              <li><a href="profile.pdf">About Us</a></li>
+              <li><a href="Contact.html">Contact Us</a></li>
+              <li><a href="Policy_Refund.html">Refund & Return Policy</a></li>
+              <li><a href="Policy_Terms.html">Terms of Service</a></li>
+              <li><a href="Policy_privacy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-section newsletter">
+            <h5>Newsletter</h5>
+            <p>Subscribe to our newsletter for updates.</p>
+            <form id="news">
+                <input id="news-email" type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>            
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 GreenDome Travel & Tours. All rights reserved.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/GreenDomeTours"><img src="imgs/facebook.png" alt="Facebook" style="width: 2rem; height: 2rem;"></a>
+            <a href="https://www.instagram.com/greendometravels/"><img src="imgs/instagram.png" alt="Instagram" style="width: 2rem; height: 2rem;"></a>
+          </div>
+        </div>
+    </footer>
+
+    <script>
+      // HAMBURGER MENU
+
+      const menuToggle = document.getElementById('menuToggle');
+      const navOptions = document.getElementById('navOptions');
+
+      menuToggle.addEventListener('click', () => {
+          navOptions.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+      });
+
+      document.querySelectorAll('.navItem').forEach(item => {
+          item.addEventListener('click', () => {
+              navOptions.classList.remove('show');
+              menuToggle.classList.remove('open'); 
+          });
+      });
+
+        // SEND EMAIL SUBSCRIPTIONS 
+
+        document.getElementById("news").addEventListener("submit", function(event) {
+            
+            event.preventDefault(); 
+            
+            let data = {
+                from: "NewsLetter Subscription",
+                package: "-",
+                name: "-",
+                contact: "-",
+                email: document.getElementById("news-email").value,
+                persons: "-"
+            };
+            
+            document.getElementById("news-email").value = "";
+            
+            fetch("https://script.google.com/macros/s/AKfycbxMQ42vYRcCYv2kuIqYDdSN9J9sfZLcQwsVsc_bidfkO1ZMgcyJIpqTxakUqFDFURgeVg/exec", {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(() => {console.log("Done!");})
+            .catch(error => {console.log("Done!");});
+        });
+    </script>
+</body>
+</html>
