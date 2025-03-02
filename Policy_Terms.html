@@ -26,11 +26,11 @@
     </nav>
 
     <div class="policy">
-      <div class="head"> 
+      <div class="head fade-in-section"> 
         <h1>Terms of Service</h1>
       </div>
 
-      <div class="content">
+      <div class="content fade-in-section">
         <h3>1. Introduction</h3>
         <p>Welcome to Greendome Travel & Tours. By using our website and services, you agree to comply with and be bound by these Terms of Service. If you do not agree with these terms, please do not use our services.</p>
         
@@ -135,7 +135,30 @@
     </footer>
 
     <script>
-        // HAMBURGER MENU
+      // fade in animation
+
+      document.addEventListener("DOMContentLoaded", function () {
+          const sections = document.querySelectorAll(".fade-in-section");
+
+          const observer = new IntersectionObserver(
+              (entries, observer) => {
+                  entries.forEach(entry => {
+                      if (entry.isIntersecting) {
+                          entry.target.classList.add("visible");
+                          observer.unobserve(entry.target); // Unobserve after first reveal
+                      }
+                  });
+              },
+              { threshold: 0.2 } // Adjust threshold for earlier/later triggering
+          );
+
+          sections.forEach(section => {
+              observer.observe(section);
+          });
+      });
+
+
+      // HAMBURGER MENU
 
         const menuToggle = document.getElementById('menuToggle');
         const navOptions = document.getElementById('navOptions');

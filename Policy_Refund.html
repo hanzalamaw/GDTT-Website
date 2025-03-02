@@ -26,11 +26,11 @@
     </nav>
 
     <div class="policy">
-      <div class="head"> 
+      <div class="head fade-in-section"> 
         <h1>Refund Policy</h1>
       </div>
 
-      <div class="content">
+      <div class="content fade-in-section">
         <h3>1. No Refund Policy</h3>
         <p>All payments made to Greendome Travel & Tours are final and non-refundable. Once a booking is confirmed and payment is processed, no refunds will be issued under any circumstances.</p>
 
@@ -102,7 +102,30 @@
     </footer>
 
     <script>
-        // HAMBURGER MENU
+      // fade in animation
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".fade-in-section");
+
+            const observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target); // Unobserve after first reveal
+                        }
+                    });
+                },
+                { threshold: 0.2 } // Adjust threshold for earlier/later triggering
+            );
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+
+      // HAMBURGER MENU
 
         const menuToggle = document.getElementById('menuToggle');
         const navOptions = document.getElementById('navOptions');
