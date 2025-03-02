@@ -3,6 +3,28 @@
     padding: 0;
 }
 
+html, body {
+    overflow: hidden; /* Prevent default scrolling on the entire page */
+    height: 100vh; /* Ensure full height */
+}
+
+.scroll-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Allows scrolling within this container */
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* BANNER AND NAV BAR */
 
 #Landing {
@@ -155,7 +177,7 @@
     color: #FFF;
     text-align: center;
     text-shadow: 4px 4px 7.6px rgba(0, 0, 0, 0.46);
-    font-family: Volkhov;
+    font-family: 'Volkhov', serif;;
     font-style: normal;
     font-weight: 700;
 }
@@ -246,7 +268,7 @@ button:hover {
 }
 
 #head h2 {
-    font-family: Volkhov;
+    font-family: 'Volkhov', serif;;
     font-size: 2.8rem;
     color: #14183E;
 }
