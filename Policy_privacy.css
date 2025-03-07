@@ -222,7 +222,6 @@ footer {
     background-color: #f8f9fa;
     color: #070707;
     padding: 40px 20px;
-    margin-top: 1rem;
 }
 
 .footer-container {
@@ -231,6 +230,8 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #a1a1a1;
 }
 
 .footer-about {
@@ -270,7 +271,6 @@ footer {
 }
 
 .newsletter button {
-    margin-top: 1rem;
     padding: 10px 20px;
     border: none;
     background-color: #045625;
@@ -284,11 +284,15 @@ footer {
 }
 
 .social-icons {
-    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0rem;
 }
 
 .social-icons a {
-    margin-right: 10px;
+    padding-top: 1.2rem;
+    padding-left: 0.5rem;
     color: #ffffff;
     text-decoration: none;
 }
@@ -296,15 +300,14 @@ footer {
 .footer-bottom {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: nowrap;
     text-align: center;
-    padding-top: 10px;
-    border-top: 1px solid #a1a1a1;
-    margin-top: 20px;
+    gap: 30rem;
+    margin-top: 10px;
     font-size: 14px;
-    padding-bottom: 0;
     margin-bottom: -1.7rem;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
