@@ -408,3 +408,14 @@ footer {
         height: 1rem;
     }
 }
+
+@media (max-width: 768px) {
+    .whatsapp {
+        bottom: 0.9rem !important;
+        right: 1rem !important;
+    }
+
+    .whatsapp img {
+        width: 3rem !important;
+    }
+}

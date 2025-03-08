@@ -27,12 +27,12 @@ html, body {
 
 @media (max-width: 768px) {
     .whatsapp {
-        bottom: 0.9rem;
-        right: 0.9rem;
+        bottom: 0.9rem !important;
+        right: 1rem !important;
     }
 
     .whatsapp img {
-        width: 3rem;
+        width: 3rem !important;
     }
 }
 
@@ -532,6 +532,12 @@ button:hover {
     margin-top: -2rem;
 }
 
+@media (max-width: 768px) {
+    .align {
+        margin-top: 0.8rem;
+    }
+}
+
 .steps {
     display: flex;
     flex-direction: column;
@@ -682,6 +688,7 @@ button:hover {
 
     .imag-sm {
         margin-left: 0rem;
+        margin-bottom: -2.8rem;
         height: 18rem ;
         width: 18rem ;
     }
@@ -889,7 +896,8 @@ button:hover {
 
     .faq-section {
         flex-wrap: wrap;
-        padding: 0.8rem 1.3rem;
+        padding: 0.5rem 1rem;
+        width: 85%;
     }
 
     .faq-content {
@@ -897,13 +905,13 @@ button:hover {
     }
 
     .faq-section h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 600;
         color: #00000062;
     }
     
     .faq-section h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 550;
         text-align: left;
         width: 100% !important;
