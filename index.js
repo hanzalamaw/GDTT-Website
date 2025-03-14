@@ -1,3 +1,7 @@
+if (window.location.pathname.endsWith("index.html")) {
+    window.history.replaceState(null, "", window.location.pathname.replace("index.html", "Home"));
+}
+
 // fade in animation
 
 document.addEventListener("DOMContentLoaded", function () {

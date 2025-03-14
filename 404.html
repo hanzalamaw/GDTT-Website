@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GDTT | Domestic Trips</title>
-    <link rel="stylesheet" href="Domestic_Trips.css">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="404.css">
     <link rel="icon" type="image/png" href="imgs/favicon.png">
 </head>
-<body>
+<body>    
     <nav id="navBar">
-        <img id="logo" src="imgs/Logo_black.png" alt="Logo" onclick="window.location.href='index.html';" style="cursor: pointer;">
+        <img id="logo" src="../imgs/Logo_black.png" alt="Logo" onclick="window.location.href='../index.html';" style="cursor: pointer;">
     
         <button id="menuToggle" aria-label="Toggle Navigation">
             <span class="bar"></span>   
@@ -18,63 +18,28 @@
         </button>
     
         <ul id="navOptions">    
-            <li><a href="index.html" class="navItem">Home</a></li>
+            <li><a href="../index.html" class="navItem">Home</a></li>
             <li><a href="Umrah_Trips.html" class="navItem">Umrah</a></li>
-            <li><a href="Contact.html" class="navItem">Contact Us</a></li>
+            <li><a href="Contact.html" class="navItem active">Contact Us</a></li>
             <li><a href="profile.pdf" class="navItem">About Us</a></li>
         </ul>
     </nav>
 
-    <section class="page-details">
-        <div class="image fade-in-section">
-            <img src="imgs/pakistan.webp" alt="Pakistan Details" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
+    <!-- 404 ERROR -->
 
-        <div class="page-content fade-in-section">
-            <div class="about-section">
-                <h1>PAKISTAN TRIPS</h1>
-                <p>Discover the breathtaking beauty of Pakistan with our carefully planned tours. From the scenic valleys of the north to the cultural landmarks of the south, enjoy a seamless travel experience filled with adventure, comfort, and unforgettable memories.</p>
-            </div>
-
-            <div class="about-section">
-                <h1>PACKAGES INCLUDES</h1>
-                <ul>
-                    <li><span>&#10003; Accomodation</span></li>
-                    <li><span>&#10003; VISA / Ticket</span></li>
-                    <li><span>&#10003; Transport</span></li>
-                    <li><span>&#10003; Medical Insurance</span></li>
-                    <li><span>&#10003; 24/7 On-Ground Support</span></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="destinations">
-        <div id="head" class="fade-in-section">
-            <p>TOP SELLING</p>
-            <h2>Pakistan Trips</h2>
-        </div>
-
-        <div id="services" class="fade-in-section">
-            <div class="service-card" onclick="window.location.href='Tours Pages/Pakistan_Customized.html';" style="cursor: pointer;">
-                <img src="imgs/domestic_card.jpg" alt="Pakistan Trips" style="object-fit: cover; border-radius: 0.7rem;">
-                <div class="card-details">
-                    <h1>
-                        <a href="Tours Pages/Pakistan_Customized.html">Customized Trips</a>
-                    </h1>
-                </div>
-                <div class="duration">
-                    <img src="imgs/arrow.png" alt="arrow">
-                    <p>10, 15 & 21 Days Trips</p>
-                </div>
-            </div>
+    <section class="error">
+        <div class="error-content">
+            <h1>404</h1>
+            <h2>PAGE NOT FOUND</h2>
+            <p>The page requested could not be found. This could be a spelling error in the URL or a removed page.</p>
+            <a href="index.html"><button>BACK TO HOMEPAGE</button></a>
         </div>
     </section>
 
     <!-- WHATSAPP LINK -->
 
-    <section class="whatsapp" style="position: fixed; bottom: 1rem; right: 2rem; z-index: 9999;">
-        <img src="imgs/whatsapp.png" alt="Whatsapp Chat" onclick="window.open('https://api.whatsapp.com/send/?phone=923317259177', '_blank');" style="cursor: pointer; width: 3.5rem; height: auto; cursor: pointer;">
+    <section class="whatsapp" style="position: fixed; bottom: 2rem; right: 3rem; z-index: 9999;">
+      <img src="imgs/whatsapp.png" alt="Whatsapp Chat" onclick="window.open('https://api.whatsapp.com/send/?phone=923317259177', '_blank');" style="cursor: pointer; width: 3.5rem; height: auto; cursor: pointer;">
     </section>
 
     <!-- FOOTER -->
@@ -121,6 +86,6 @@
         </div>
     </footer>
 
-    <script src="Domestic_Trips.js"></script>
+    <script src="404.js"></script>
 </body>
 </html>
