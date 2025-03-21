@@ -4,14 +4,14 @@
 }
 
 html, body {
-    overflow: hidden; /* Prevent default scrolling on the entire page */
-    height: 100vh; /* Ensure full height */
+    overflow: hidden;
+    height: 100vh;
 }
 
 .scroll-container {
     width: 100%;
     height: 100%;
-    overflow: auto; /* Allows scrolling within this container */
+    overflow: auto;
 }
 
 .fade-in-section {
@@ -39,7 +39,7 @@ html, body {
 /* BANNER AND NAV BAR */
 
 #Landing {
-    background-image: url('imgs/Banner-Background.png');
+    background-image: url('imgs/Banner-Background-1.png');
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -188,7 +188,7 @@ html, body {
     color: #FFF;
     text-align: center;
     text-shadow: 4px 4px 7.6px rgba(0, 0, 0, 0.46);
-    font-family: 'Volkhov', serif;;
+    font-family: 'Volkhov', serif;
     font-style: normal;
     font-weight: 700;
 }
@@ -279,7 +279,7 @@ button:hover {
 }
 
 #head h2 {
-    font-family: 'Volkhov', serif;;
+    font-family: 'Century Gothic';
     font-size: 2.8rem;
     color: #14183E;
 }
