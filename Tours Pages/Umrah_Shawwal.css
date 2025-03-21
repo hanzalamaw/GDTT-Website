@@ -546,7 +546,7 @@
 
 @media (max-width: 768px) {
     .opt-card {
-        width: calc(100% - 0.25rem);
+        width: calc(100% - 0.25rem) !important;
     }
 }
 
@@ -686,7 +686,8 @@ input[type="number"]::-webkit-inner-spin-button {
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    height: 28.8rem;
+    height: auto;
+    max-height: 30rem;
 }
 
 .about-section h1{

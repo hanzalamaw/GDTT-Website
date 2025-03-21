@@ -633,7 +633,7 @@ input[type="number"]::-webkit-inner-spin-button {
 #submit {
     margin-top: 1rem;
     width: 100%;
-    background-color: #045625;
+    background-color: #035026;
     color: white;
     padding: 1rem;
     font-size: 1rem;
@@ -644,7 +644,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #submit:hover {
-    background-color: #03461a;
+    background-color: #074422;
 }
 
 #done {
@@ -686,7 +686,7 @@ input[type="number"]::-webkit-inner-spin-button {
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    height: 23.3rem;
+    height: auto;
 }
 
 .about-section h1{
@@ -786,14 +786,14 @@ footer {
 .newsletter button {
     padding: 10px 20px;
     border: none;
-    background-color: #045625;
+    background-color: #035026;
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .newsletter button:hover {
-    background-color: #03461a;
+    background-color: #074422;
 }
 
 .social-icons {

@@ -134,6 +134,12 @@ packageData.packages.forEach((pkg, index) => {
     console.log(displayer);
     });
 
+    const optCards = document.querySelectorAll(".opt-card"); 
+
+    optCards.forEach(card => {
+        card.style.setProperty("width", (selectedPackageName === "Umrah (Shawwal Group)") ? "calc(100% - 0.25rem)" : "calc(50% - 0.25rem)");
+    });
+
     attachPackageSelectionListeners();
 
 }
