@@ -4,6 +4,13 @@
     
 }
 
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('fonts/GOTHICB.TTF') format('truetype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
 .fade-in-section {
     opacity: 0;
     transform: translateY(50px);
@@ -218,7 +225,7 @@
 }
 
 #head h2 {
-    font-family: 'Century Gothic';
+    font-family: 'Century Gothic', sans-serif;
     font-size: 2.8rem;
     color: #14183E;
 }
