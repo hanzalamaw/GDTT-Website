@@ -141,7 +141,6 @@ packageData.packages.forEach((pkg, index) => {
     });
 
     attachPackageSelectionListeners();
-
 }
 
 // HIGHLIGHT SELECTED PACKAGE NAME
