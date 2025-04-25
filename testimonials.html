@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GDTT | Domestic Trips</title>
-    <link rel="stylesheet" href="Domestic_Trips.css">
-    <link rel="icon" type="image/png" href="imgs/favicon.png">
+    <title>GDTT | Testimonials</title>
+    <link rel="stylesheet" href="testimonials.css">
+    <link rel="icon" href="imgs/favicon.png">
 </head>
 <body>
     <nav id="navBar">
-        <img id="logo" src="imgs/Logo_black.png" alt="Logo" onclick="window.location.href='index.html';" style="cursor: pointer;">
+        <img id="logo" src="imgs/Logo_black.png" alt="Logo" onclick="window.location.href='../index.html';" style="cursor: pointer;">
     
         <button id="menuToggle" aria-label="Toggle Navigation">
             <span class="bar"></span>   
@@ -18,7 +18,7 @@
         </button>
     
         <ul id="navOptions">
-            <li><a href="index.html" class="navItem ">Home</a></li>
+            <li><a href="index.html" class="navItem">Home</a></li>
             <li><a href="Umrah_Trips.html" class="navItem">Umrah</a></li>
             <li><a href="About.html" class="navItem">Who We Are?</a></li>
             <li><a href="Services.html" class="navItem">What We Do?</a></li>
@@ -27,56 +27,60 @@
         </ul>
     </nav>
 
-    <section class="page-details">
-        <div class="image fade-in-section">
-            <img src="imgs/pakistan.webp" alt="Pakistan Details" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
+    <!-- Testimonials -->
 
-        <div class="page-content fade-in-section">
-            <div class="about-section">
-                <h1>PAKISTAN TRIPS</h1>
-                <p>Discover the breathtaking beauty of Pakistan with our carefully planned tours. From the scenic valleys of the north to the cultural landmarks of the south, enjoy a seamless travel experience filled with adventure, comfort, and unforgettable memories.</p>
+    <section class="testimonials">
+        <div class="testimonial-section1">
+            <div class="testimonial-image">
+                <img src="imgs/profile.png" alt="Mr. Mohsin Khan">
             </div>
-
-            <div class="about-section">
-                <h1>PACKAGES INCLUDES</h1>
-                <ul>
-                    <li><span>&#10003; Accomodation</span></li>
-                    <li><span>&#10003; VISA / Ticket</span></li>
-                    <li><span>&#10003; Transport</span></li>
-                    <li><span>&#10003; Medical Insurance</span></li>
-                    <li><span>&#10003; 24/7 On-Ground Support</span></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="destinations">
-        <div id="head" class="fade-in-section">
-            <p>TOP SELLING</p>
-            <h2>Pakistan Trips</h2>
-        </div>
-
-        <div id="services" class="fade-in-section">
-            <div class="service-card" onclick="window.location.href='Tours Pages/Pakistan_Customized.html';" style="cursor: pointer;">
-                <img src="imgs/domestic_card.jpg" alt="Pakistan Trips" style="object-fit: cover; border-radius: 0.7rem;">
-                <div class="card-details">
-                    <h1>
-                        <a href="Tours Pages/Pakistan_Customized.html">Customized Trips</a>
-                    </h1>
+            <div class="testimonial-content">
+                <div class="upper-content">
+                    <div class="info">
+                        <h1>Mr. Wali Mohammad</h1>
+                        <p>PTI Sindh Youth Wing General Secretary</p>
+                    </div>
+                    <div class="star">
+                        <img src="imgs/stars.png" alt="stars">
+                    </div>
                 </div>
-                <div class="duration">
-                    <img src="imgs/arrow.png" alt="arrow">
-                    <p>10, 15 & 21 Days Trips</p>
+
+                <div class="lower-content">
+                    <img src="imgs/quote.png" alt="Quote">
+                    <i>My trip to Turkey was so good, accommodations were
+                        perfect, because GreenDome Travel & Tours selected best
+                        spots for our hotels. Their local representatives were very
+                        hospitable. I will definitely recommend everyone.</i>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- WHATSAPP LINK -->
+        <div class="testimonial-section1">
+            <div class="testimonial-content">
+                <div class="upper-content">
+                    <div class="info">
+                        <h1>M. Umar</h1>
+                        <p>Assistant Procurement. Ministry of Planning & Development</p>
+                    </div>
+                    <div class="star">
+                        <img src="imgs/stars.png" alt="stars">
+                    </div>
+                </div>
 
-    <section class="whatsapp" style="position: fixed; bottom: 1rem; right: 2rem; z-index: 9999;">
-        <img src="imgs/whatsapp.png" alt="Whatsapp Chat" onclick="window.open('https://api.whatsapp.com/send/?phone=923317259177', '_blank');" style="cursor: pointer; width: 3.5rem; height: auto; cursor: pointer;">
+                <div class="lower-content">
+                    <img src="imgs/quote.png" alt="Quote">
+                    <i>We belong to the logistics industry but still we failed to find
+                        transportation excellence ourselves that Green Dome
+                        offered us. Very precise rates, comfortable travelling and
+                        great support for our trip to Kashmir.
+                        </i>
+                </div>
+            </div>
+
+            <div class="testimonial-image">
+                <img src="imgs/profile.png" alt="Mr. Mohsin Khan">
+            </div>
+        </div>
     </section>
 
     <!-- FOOTER -->
@@ -121,7 +125,6 @@
             <p>&copy; 2025 GreenDome Travel & Tours. All rights reserved. Powered by <a href="https://webhouseinc.co/" style="text-decoration: none;">Webhouse Inc.</a></p>
         </div>
     </footer>
-
-    <script src="Domestic_Trips.js"></script>
+    <script src="testimonials.js"></script>
 </body>
 </html>
