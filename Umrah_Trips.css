@@ -264,7 +264,7 @@
     
     border-radius: 2rem;
     max-width: 17rem;
-    height: 25.7rem;
+    height: 28.7rem;
 
     display: flex; 
     flex-direction: column; 
@@ -272,6 +272,7 @@
     align-items: start;
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
 }
 
 .service-card:hover {

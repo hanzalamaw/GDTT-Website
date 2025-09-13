@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dijkstra Maze Map</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #121212;
+      color: white;
+    }
+    h1 {
+      margin: 1rem;
+    }
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(20, 25px);
+      grid-template-rows: repeat(20, 25px);
+      gap: 2px;
+    }
+    .cell {
+      width: 25px;
+      height: 25px;
+      background: #1e1e1e;
+      border: 1px solid #333;
+      cursor: pointer;
+    }
+    .wall {
+      background: #555;
+    }
+    .start {
+      background: green;
+    }
+    .end {
+      background: red;
+    }
+    .visited {
+      background: #1e90ff;
+      animation: visitedAnim 0.3s;
+    }
+    .path {
+      background: yellow;
+      animation: pathAnim 0.3s;
+    }
+    @keyframes visitedAnim {
+      from { background: #222; }
+      to { background: #1e90ff; }
+    }
+    @keyframes pathAnim {
+      from { background: #1e90ff; }
+      to { background: yellow; }
+    }
+    #instructions {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dijkstra Maze (Streets Style)</h1>
+  <div id="grid"></div>
+  <div id="instructions">
+    <p>Press <b>S</b> and click to set start | <b>E</b> for end</p>
+    <p>Press <b>Space</b> to run algorithm | <b>C</b> to reset</p>
+  </div>
+
+  <script>
+    const grid = document.getElementById("grid");
+    const rows = 20, cols = 20;
+    let mode = 'none', start = null, end = null;
+    const cells = [];
+
+    // Simple maze layout: 0 = path, 1 = wall
+    const maze = [
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        [1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,1],
+        [1,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,1,1,0,1],
+        [1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1],
+        [1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,0,1,1,1],
+        [1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,1,0,0,0,1],
+        [1,0,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,1,0,1],
+        [1,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,1],
+        [1,0,1,0,1,1,0,1,1,1,0,1,1,1,1,1,0,1,0,1],
+        [1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1],
+        [1,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,1,1,1,1],
+        [1,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,1],
+        [1,0,1,1,0,1,0,1,0,1,0,1,0,1,1,1,1,1,0,1],
+        [1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1],
+        [1,0,1,0,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,1],
+        [1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,1],
+        [1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,0,1,1,1],
+        [1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1],
+        [1,0,1,1,0,1,1,0,1,1,0,1,1,1,0,1,1,1,0,1],
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    ];
+
+    // Create grid from maze
+    for (let r = 0; r < rows; r++) {
+      cells[r] = [];
+      for (let c = 0; c < cols; c++) {
+        const cell = document.createElement("div");
+        cell.classList.add("cell");
+        if (maze[r][c] === 1) cell.classList.add("wall");
+        grid.appendChild(cell);
+        cells[r][c] = {
+          el: cell, row: r, col: c,
+          wall: maze[r][c] === 1,
+          dist: Infinity,
+          prev: null,
+          visited: false
+        };
+        cell.addEventListener("click", () => handleClick(r, c));
+      }
+    }
+
+    function handleClick(r, c) {
+      const cell = cells[r][c];
+      if (cell.wall) return;
+      if (mode === 'start') {
+        if (start) start.el.classList.remove('start');
+        start = cell;
+        cell.el.classList.add('start');
+        mode = 'none';
+      } else if (mode === 'end') {
+        if (end) end.el.classList.remove('end');
+        end = cell;
+        cell.el.classList.add('end');
+        mode = 'none';
+      }
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key.toLowerCase() === 's') mode = 'start';
+      else if (e.key.toLowerCase() === 'e') mode = 'end';
+      else if (e.key === ' ') runDijkstra();
+      else if (e.key.toLowerCase() === 'c') resetGrid();
+    });
+
+    function resetGrid() {
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const cell = cells[r][c];
+          cell.el.className = 'cell';
+          if (maze[r][c] === 1) cell.el.classList.add("wall");
+          cell.wall = maze[r][c] === 1;
+          cell.visited = false;
+          cell.dist = Infinity;
+          cell.prev = null;
+        }
+      }
+      start = end = null;
+    }
+
+    async function runDijkstra() {
+      if (!start || !end) return alert("Set start and end!");
+      const queue = [];
+      start.dist = 0;
+      queue.push(start);
+
+      while (queue.length > 0) {
+        queue.sort((a, b) => a.dist - b.dist);
+        const curr = queue.shift();
+        if (curr.visited || curr.wall) continue;
+        curr.visited = true;
+        if (curr !== start && curr !== end) {
+          curr.el.classList.add("visited");
+          await sleep(15);
+        }
+
+        if (curr === end) break;
+
+        const neighbors = getNeighbors(curr);
+        for (let n of neighbors) {
+          const alt = curr.dist + 1;
+          if (alt < n.dist) {
+            n.dist = alt;
+            n.prev = curr;
+            queue.push(n);
+          }
+        }
+      }
+
+      let p = end;
+      while (p.prev && p !== start) {
+        p = p.prev;
+        if (p !== start) p.el.classList.add("path");
+        await sleep(30);
+      }
+    }
+
+    function getNeighbors(cell) {
+      const { row, col } = cell;
+      const neighbors = [];
+      if (row > 0) neighbors.push(cells[row - 1][col]);
+      if (row < rows - 1) neighbors.push(cells[row + 1][col]);
+      if (col > 0) neighbors.push(cells[row][col - 1]);
+      if (col < cols - 1) neighbors.push(cells[row][col + 1]);
+      return neighbors;
+    }
+
+    const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
+  </script>
+</body>
+</html>
