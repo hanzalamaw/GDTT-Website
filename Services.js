@@ -3,7 +3,7 @@
 }*/
 
 // fade in animation
-
+ 
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll(".fade-in-section");
 
